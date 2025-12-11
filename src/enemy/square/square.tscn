@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://u34j7xpgosx5"]
+
+[ext_resource type="Texture2D" uid="uid://b6f56u8ipm42u" path="res://src/enemy/assets/1bit 16px icons part-2 outlines.png" id="1_e5kll"]
+[ext_resource type="Script" path="res://src/enemy/square/square.gd" id="1_nr17f"]
+[ext_resource type="Script" path="res://src/battle/hit_hurt/hurtbox.gd" id="3_lufod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icggh"]
+atlas = ExtResource("1_e5kll")
+region = Rect2(8, 9, 15, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i5yi"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4nlt"]
+size = Vector2(16, 14)
+
+[node name="Square" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_nr17f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_icggh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1i5yi")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("3_lufod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_q4nlt")
