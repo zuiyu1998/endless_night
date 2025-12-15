@@ -2,28 +2,38 @@ extends CharacterBody2D
 
 @onready var bullet_position: Marker2D = $BulletPosition
 
-var ball_tscn = preload("res://src/bullet/ball/ball.tscn")
+var skill_system: SkillSystem
 
+var skill: Skill = preload("res://src/unit/arrow_tower/arrow_tower_skill.tres")
+
+#var skill = preload()
 # 是否启动
 var active: bool = false
 var enemy_list: Array[Node2D] = []
 
 func release_skill():
+	if skill_system == null:
+		printerr("Skill system not found.")
+		return
+		
 	if enemy_list.is_empty():
 		return
-	var enemy = enemy_list[0] as Node2D
 	
-	var direction = (enemy.global_position - bullet_position.global_position).normalized()
+	var target = enemy_list[0]
 	
-	var ball = ball_tscn.instantiate() as Ball
-	ball.position = bullet_position.global_position
-	ball.velocity = direction * 10
-	get_tree().current_scene.add_child(ball)
+	print("Skill start.")
+	var unit = UnitSkillComponent.new_unit_skill_component(self)
+	var enemy = EnemySkillComponent.new_enemy_skill_component(target)
+	var payload = {
+		"bullet_position": bullet_position.global_position
+	}
+	skill_system.execute(skill, unit, enemy, payload)
 
 func on_warning(enemy: Node2D):
 	enemy_list.push_back(enemy)
 	if not active:
 		call_deferred("release_skill")
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	on_warning(body)

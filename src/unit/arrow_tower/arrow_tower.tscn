@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bjyw4gdjm804w"]
 
-[ext_resource type="Texture2D" uid="uid://chk2qmlnbfpci" path="res://src/unit/arrow_tower/1bit 16px icons part-2 outlines.png" id="1_6887v"]
+[ext_resource type="Texture2D" uid="uid://chk2qmlnbfpci" path="res://src/unit/assets/1bit 16px icons part-2 outlines.png" id="1_6887v"]
 [ext_resource type="Script" path="res://src/unit/arrow_tower/arrow_tower.gd" id="1_boc4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvrli"]

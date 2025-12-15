@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=4 format=3 uid="uid://o1ldjdk7wx5l"]
+
+[ext_resource type="Script" path="res://src/skill/skill_effect.gd" id="1_ajh6p"]
+[ext_resource type="Script" path="res://src/skill/skill.gd" id="2_bgbsx"]
+
+[sub_resource type="Resource" id="Resource_472rb"]
+script = ExtResource("1_ajh6p")
+effect_name = "bullet"
+payload = {}
+
+[resource]
+script = ExtResource("2_bgbsx")
+skill_name = &"arrow_tower"
+effects = Array[ExtResource("1_ajh6p")]([SubResource("Resource_472rb")])

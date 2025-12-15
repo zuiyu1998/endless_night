@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhnnpo2hqrhjw"]
+[gd_scene load_steps=5 format=3 uid="uid://dhnnpo2hqrhjw"]
 
+[ext_resource type="Script" path="res://tests/main_test.gd" id="1_1dobo"]
 [ext_resource type="PackedScene" uid="uid://u34j7xpgosx5" path="res://src/enemy/square/square.tscn" id="1_l0u2i"]
+[ext_resource type="Script" path="res://src/skill/skill_system.gd" id="2_houmj"]
 [ext_resource type="PackedScene" uid="uid://bjyw4gdjm804w" path="res://src/unit/arrow_tower/arrow_tower.tscn" id="2_s8wn0"]
 
 [node name="MainTest" type="Node2D"]
+script = ExtResource("1_1dobo")
+
+[node name="SkillSystem" type="Node" parent="."]
+script = ExtResource("2_houmj")
 
 [node name="Square" parent="." instance=ExtResource("1_l0u2i")]
 position = Vector2(340, 167)

@@ -1,6 +1,7 @@
-class_name SkillEffectProcessor
+class_name ISkillEffectProcessor
 
-var effect_name: String = ""
+func effect_name() -> String:
+	return ""
 
-func process(effect: SkillEffect, context: SkillContext) -> Dictionary:
+func process(_effect: SkillEffect, _context: SkillContext) -> Dictionary:
 	return {}
