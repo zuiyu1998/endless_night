@@ -6,7 +6,7 @@ var ball_tscn = preload("res://src/bullet/ball/ball.tscn")
 func effect_name() -> String:
 	return "bullet"
 
-func process(_effect: SkillEffect, context: SkillContext) -> Dictionary:
+func process(_effect: SkillEffect, context: SkillContext) -> ISkillCommand:
 	var enemy = context.target.get_source_node2d()
 	var bullet_position = context.get_value("bullet_position") as Vector2
 	var res = {}
@@ -17,6 +17,8 @@ func process(_effect: SkillEffect, context: SkillContext) -> Dictionary:
 	var ball = ball_tscn.instantiate() as Ball
 	ball.position = bullet_position
 	ball.velocity = direction * 10
-	context.get_tree().current_scene.add_child(ball)
 	
-	return res
+	var skill_command = BulletSkillCommand.new()
+	skill_command.ball = ball
+	
+	return skill_command
