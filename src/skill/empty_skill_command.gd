@@ -1,5 +1,5 @@
 extends ISkillCommand
 class_name EmptySkillCommand
 
-func execute(caster:ISkillComponent):
+func execute(_caster:ISkillComponent):
 	pass

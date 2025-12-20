@@ -6,6 +6,7 @@ extends CharacterBody2D
 var skill_system: SkillSystem
 
 var skill: Skill = preload("res://src/unit/arrow_tower/arrow_tower_skill.tres")
+var attribute_set: AttributeSet = preload("res://src/unit/arrow_tower/arrow_tower_attribute_set.tres")
 
 # 是否启动
 var active: bool = false
