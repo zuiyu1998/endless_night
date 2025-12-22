@@ -1,40 +1,42 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjyw4gdjm804w"]
+[gd_scene load_steps=8 format=3 uid="uid://dia3ltycylxyk"]
 
 [ext_resource type="Texture2D" uid="uid://chk2qmlnbfpci" path="res://src/unit/assets/1bit 16px icons part-2 outlines.png" id="1_6887v"]
 [ext_resource type="Script" path="res://src/unit/arrow_tower/arrow_tower.gd" id="1_boc4w"]
+[ext_resource type="PackedScene" uid="uid://cjj061pcltpat" path="res://src/unit/unit.tscn" id="1_hrtx6"]
+[ext_resource type="Script" path="res://src/common/skill_component.gd" id="3_m6vbw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvrli"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ywpu"]
 size = Vector2(12, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdfpd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbdhx"]
 atlas = ExtResource("1_6887v")
 region = Rect2(81, 106, 13, 13)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rd07h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmnih"]
 radius = 126.57
 
-[node name="ArrowTower" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 6
+[node name="ArrowTower" instance=ExtResource("1_hrtx6")]
 script = ExtResource("1_boc4w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hvrli")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_7ywpu")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_rdfpd")
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture = SubResource("AtlasTexture_fbdhx")
 
-[node name="AttackDistance" type="Area2D" parent="."]
+[node name="AttackDistance" type="Area2D" parent="." index="3"]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDistance"]
-shape = SubResource("CircleShape2D_rd07h")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackDistance" index="0"]
+shape = SubResource("CircleShape2D_nmnih")
 
-[node name="BulletPosition" type="Marker2D" parent="."]
+[node name="BulletPosition" type="Marker2D" parent="." index="4"]
 position = Vector2(6, -1)
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="." index="5"]
 
-[connection signal="body_entered" from="AttackDistance" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[node name="SkillComponent2" type="Node" parent="." index="6"]
+script = ExtResource("3_m6vbw")
+
+[connection signal="body_entered" from="AttackDistance" to="." method="_on_attack_distance_body_entered"]

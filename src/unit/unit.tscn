@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjj061pcltpat"]
+
+[ext_resource type="Script" path="res://src/unit/unit.gd" id="1_w4wvi"]
+[ext_resource type="Script" path="res://src/common/skill_component.gd" id="2_wn1dc"]
+
+[node name="Unit" type="CharacterBody2D"]
+script = ExtResource("1_w4wvi")
+
+[node name="SkillComponent" type="Node" parent="."]
+script = ExtResource("2_wn1dc")

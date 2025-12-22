@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Attrribute" load_steps=2 format=3 uid="uid://dud2m3wvrda63"]
+
+[ext_resource type="Script" path="res://src/skill/attribute/attribute.gd" id="1_oys6w"]
+
+[resource]
+script = ExtResource("1_oys6w")
+attrribute_name = &"max_health"

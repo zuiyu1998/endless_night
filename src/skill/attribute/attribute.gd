@@ -1,7 +1,9 @@
 extends Resource
 class_name Attrribute
 
+@export
 var attrribute_name: StringName = ""
+
 # 基础值
 var _base_value: float = 0.0
 # 当前值
@@ -26,7 +28,7 @@ func _recalculate_current_value():
 	
 	var absolute_modifiers: Array[AttrributeModifier] = []
 	var percentage_modifiers: Array[AttrributeModifier] = []
-	var overload_modifier: AttrributeModifier
+	var overload_modifier: AttrributeModifier = null
 	
 	for modifier in _modifiers:
 		match modifier.operation:
