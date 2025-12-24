@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhnnpo2hqrhjw"]
 
 [ext_resource type="Script" path="res://tests/main_test.gd" id="1_1dobo"]
-[ext_resource type="PackedScene" uid="uid://u34j7xpgosx5" path="res://src/enemy/square/square.tscn" id="1_l0u2i"]
+[ext_resource type="PackedScene" uid="uid://dh1woag5fuagg" path="res://src/enemy/square/square.tscn" id="1_l0u2i"]
 [ext_resource type="Script" path="res://src/skill/skill_system.gd" id="2_houmj"]
 [ext_resource type="PackedScene" uid="uid://dia3ltycylxyk" path="res://src/unit/arrow_tower/arrow_tower.tscn" id="2_s8wn0"]
 

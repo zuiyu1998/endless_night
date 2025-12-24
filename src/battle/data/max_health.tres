@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_oys6w")
 attrribute_name = &"max_health"
+default_value = 10.0

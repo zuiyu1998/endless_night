@@ -9,6 +9,27 @@ class_name ArrowTower
 var active: bool = false
 var enemy_list: Array[Node2D] = []
 
+func find_enemy() -> Node2D:
+	var index = 0
+	var valid = false
+	var enemy_len = enemy_list.size()
+	while not valid && index < enemy_len:
+		var enemy = enemy_list[0]
+		if is_instance_valid(enemy):
+			valid = true
+		else:
+			index = index + 1
+	
+	
+	if index != 0:
+		for x in range(0, index):
+			enemy_list.pop_front()
+	
+	if enemy_list.is_empty():
+		return null
+		
+	return enemy_list[0]
+
 
 func _ready() -> void:
 	skill_component.skill = preload("res://src/unit/arrow_tower/arrow_tower_skill.tres").duplicate(true)
@@ -26,7 +47,12 @@ func release_skill():
 	if enemy_list.is_empty():
 		return
 	
-	var target = enemy_list[0]
+	var target = find_enemy()
+	
+	if target == null:
+		active = false
+		spawn_timer.stop()
+		return
 	
 	print("Skill start.")
 	var unit = UnitSkillComponent.new_unit_skill_component(self)

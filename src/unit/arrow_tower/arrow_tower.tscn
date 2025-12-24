@@ -40,3 +40,4 @@ position = Vector2(6, -1)
 script = ExtResource("3_m6vbw")
 
 [connection signal="body_entered" from="AttackDistance" to="." method="_on_attack_distance_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

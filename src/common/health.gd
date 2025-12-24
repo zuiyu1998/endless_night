@@ -3,10 +3,19 @@ class_name Health
 signal value_update(value: int, max_value: int)
 
 var _max_value: int = 10
-var _value: int = 0
+var _value: int = 10
 
 func emit_value_update():
 	value_update.emit(_value, _max_value)
+
+func die() -> bool:
+	if _value <= 0:
+		return true
+	else:
+		return false
+
+func get_value() -> int:
+	return _value
 
 
 func update_value(v: int):

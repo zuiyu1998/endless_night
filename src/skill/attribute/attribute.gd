@@ -4,6 +4,13 @@ class_name Attrribute
 @export
 var attrribute_name: StringName = ""
 
+@export
+var default_value: float = 10.0:
+	set(v):
+		default_value = v
+		update_base_value(v)
+	
+
 # 基础值
 var _base_value: float = 0.0
 # 当前值
