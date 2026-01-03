@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://drql6lhtqhc5e"]
+
+[ext_resource type="Texture2D" uid="uid://ktt48robcxgy" path="res://src/map/tile/assets/Hill.png" id="1_yup4r"]
+
+[node name="Hill" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("1_yup4r")
+centered = false

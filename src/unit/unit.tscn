@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjj061pcltpat"]
+[gd_scene load_steps=5 format=3 uid="uid://cjj061pcltpat"]
 
 [ext_resource type="Script" path="res://src/unit/unit.gd" id="1_w4wvi"]
 [ext_resource type="Script" path="res://src/common/skill_component.gd" id="2_wn1dc"]
+[ext_resource type="Texture2D" uid="uid://begogtn55lq1d" path="res://src/unit/assets/IconOutline2.png" id="3_yq5nk"]
+[ext_resource type="Texture2D" uid="uid://brdx2kc5yh88x" path="res://src/unit/assets/TemporaryArrowTower.png" id="4_cwkrw"]
 
 [node name="Unit" type="CharacterBody2D"]
 script = ExtResource("1_w4wvi")
 
 [node name="SkillComponent" type="Node" parent="."]
 script = ExtResource("2_wn1dc")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="GridDecrease" type="Sprite2D" parent="Body"]
+texture = ExtResource("3_yq5nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture = ExtResource("4_cwkrw")

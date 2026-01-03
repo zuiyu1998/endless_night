@@ -9,27 +9,16 @@ class_name ArrowTower
 var active: bool = false
 var enemy_list: Array[Node2D] = []
 
-func find_enemy() -> Node2D:
-	var index = 0
-	var valid = false
-	var enemy_len = enemy_list.size()
-	while not valid && index < enemy_len:
-		var enemy = enemy_list[0]
-		if is_instance_valid(enemy):
-			valid = true
-		else:
-			index = index + 1
+func _physics_process(_delta: float) -> void:
+	if not active:
+		return
 	
-	
-	if index != 0:
-		for x in range(0, index):
-			enemy_list.pop_front()
+	# 检查玩家是否有效
+	enemy_list = enemy_list.filter(func (enemy): return is_instance_valid(enemy))
 	
 	if enemy_list.is_empty():
-		return null
-		
-	return enemy_list[0]
-
+		active = false
+		spawn_timer.stop()
 
 func _ready() -> void:
 	skill_component.skill = preload("res://src/unit/arrow_tower/arrow_tower_skill.tres").duplicate(true)
@@ -43,18 +32,10 @@ func release_skill():
 	if skill_system == null:
 		printerr("Skill system not found.")
 		return
-		
-	if enemy_list.is_empty():
-		return
 	
-	var target = find_enemy()
+	var target = enemy_list[0]
 	
-	if target == null:
-		active = false
-		spawn_timer.stop()
-		return
-	
-	print("Skill start.")
+	print_debug("Skill start.")
 	var unit = UnitSkillComponent.new_unit_skill_component(self)
 	var enemy = EnemySkillComponent.new_enemy_skill_component(target)
 	var payload = {

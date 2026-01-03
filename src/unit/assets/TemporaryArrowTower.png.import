@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chk2qmlnbfpci"
-path="res://.godot/imported/1bit 16px icons part-2 outlines.png-e2826de32b83a10dd57accba697b2432.ctex"
+uid="uid://brdx2kc5yh88x"
+path="res://.godot/imported/TemporaryArrowTower.png-6d1cbff081ca59684a93626d22eef27f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/unit/assets/1bit 16px icons part-2 outlines.png"
-dest_files=["res://.godot/imported/1bit 16px icons part-2 outlines.png-e2826de32b83a10dd57accba697b2432.ctex"]
+source_file="res://src/unit/assets/TemporaryArrowTower.png"
+dest_files=["res://.godot/imported/TemporaryArrowTower.png-6d1cbff081ca59684a93626d22eef27f.ctex"]
 
 [params]
 
