@@ -20,6 +20,9 @@ var cell_size: int = 128
 @export
 var cell_space: int = 2
 
+@export
+var map_data: MapData
+
 var container = MapItemFactoryContainer.new_map_item_factory_container()
 
 var selected: Vector2i = Vector2i.ZERO
@@ -56,10 +59,14 @@ func get_cell_position(x: int, y: int) -> Vector2:
 	
 	return Vector2(postion_x, postion_y)
 
+func apply_map_data():
+	if map_data == null:
+		printerr("Map data must have.")
+		return
+	
+	for map_cell_data in map_data.data:
+		var position = get_cell_position(map_cell_data.x, map_cell_data.y)
+		add_map_cell({"map_item_name": map_cell_data.map_item_name, "position": {"x":  position.x, "y": position.y }})
 
 func _ready() -> void:
-	selected_sprite.visible = true
-	for i in range(0, 10):
-		for j in range(0, 10):
-			var position = get_cell_position(i, j)
-			add_map_cell({"map_item_name": "hill", "position": {"x":  position.x, "y": position.y }})
+	apply_map_data()
