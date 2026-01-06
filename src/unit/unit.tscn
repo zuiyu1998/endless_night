@@ -12,9 +12,12 @@ script = ExtResource("1_w4wvi")
 script = ExtResource("2_wn1dc")
 
 [node name="Body" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="GridDecrease" type="Sprite2D" parent="Body"]
 texture = ExtResource("3_yq5nk")
+centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Body"]
 texture = ExtResource("4_cwkrw")
+centered = false

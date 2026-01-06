@@ -1,5 +1,5 @@
 extends MapItemFactory
-class_name MapItemFactoryHill
+class_name HillMapItemFactory
 
 var map_item_tscn = preload("res://src/map/item/map_item.tscn")
 var hill_tscn = preload("res://src/map/tile/hill.tscn")

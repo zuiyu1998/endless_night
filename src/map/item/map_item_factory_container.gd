@@ -16,5 +16,7 @@ func get_factory(item_name: String) -> MapItemFactory:
 
 static func new_map_item_factory_container() -> MapItemFactoryContainer:
 	var container = MapItemFactoryContainer.new()
-	container.register(MapItemFactoryHill.new())
+	container.register(HillMapItemFactory.new())
+	container.register(ArrowTowerMapItemFactory.new())
+	
 	return container

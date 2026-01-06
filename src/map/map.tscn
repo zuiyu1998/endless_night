@@ -1,15 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqxxikjp2j6c1"]
+[gd_scene load_steps=3 format=3 uid="uid://dqxxikjp2j6c1"]
 
 [ext_resource type="Script" path="res://src/map/map.gd" id="1_7piwn"]
-[ext_resource type="PackedScene" uid="uid://dul0lsnurrus" path="res://src/map/item/map_item.tscn" id="2_x4dak"]
 [ext_resource type="Texture2D" uid="uid://cyrmj38f4liar" path="res://src/map/assets/ButtonSelectLine3.png" id="3_74jg7"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_7piwn")
 
 [node name="Body" type="Node2D" parent="."]
-
-[node name="MapItem" parent="Body" instance=ExtResource("2_x4dak")]
 
 [node name="SelectedSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

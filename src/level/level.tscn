@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://dotudxu14pm7"]
+
+[ext_resource type="Script" path="res://src/level/level.gd" id="1_pqb6p"]
+[ext_resource type="Script" path="res://src/skill/skill_system.gd" id="1_rekbb"]
+[ext_resource type="PackedScene" uid="uid://dqxxikjp2j6c1" path="res://src/map/map.tscn" id="2_wj882"]
+[ext_resource type="Resource" uid="uid://1gl2rm3tm7tx" path="res://tests/map_test.tres" id="3_l806b"]
+
+[node name="Level" type="Node"]
+script = ExtResource("1_pqb6p")
+
+[node name="SkillSystem" type="Node" parent="."]
+script = ExtResource("1_rekbb")
+
+[node name="Map" parent="." instance=ExtResource("2_wj882")]
+map_data = ExtResource("3_l806b")

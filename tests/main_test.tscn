@@ -1,15 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhnnpo2hqrhjw"]
+[gd_scene load_steps=3 format=3 uid="uid://dhnnpo2hqrhjw"]
 
 [ext_resource type="Script" path="res://tests/main_test.gd" id="1_1dobo"]
-[ext_resource type="Script" path="res://src/skill/skill_system.gd" id="2_houmj"]
-[ext_resource type="PackedScene" uid="uid://dqxxikjp2j6c1" path="res://src/map/map.tscn" id="3_ny3sy"]
-[ext_resource type="Resource" uid="uid://1gl2rm3tm7tx" path="res://tests/map_test.tres" id="4_plpsf"]
+[ext_resource type="PackedScene" uid="uid://dotudxu14pm7" path="res://src/level/level.tscn" id="2_uifye"]
 
 [node name="MainTest" type="Node2D"]
 script = ExtResource("1_1dobo")
 
-[node name="SkillSystem" type="Node" parent="."]
-script = ExtResource("2_houmj")
-
-[node name="Map" parent="." instance=ExtResource("3_ny3sy")]
-map_data = ExtResource("4_plpsf")
+[node name="Level" parent="." instance=ExtResource("2_uifye")]
