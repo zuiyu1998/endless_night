@@ -29,10 +29,6 @@ func _ready() -> void:
 
 
 func release_skill():
-	if skill_system == null:
-		printerr("Skill system not found.")
-		return
-	
 	var target = enemy_list[0]
 	
 	print_debug("Skill start.")
@@ -41,6 +37,8 @@ func release_skill():
 	var payload = {
 		"bullet_position": bullet_position.global_position
 	}
+	var skill_system = get_system_proxy()
+	
 	skill_system.execute(skill_component.skill, unit, enemy, payload)
 
 

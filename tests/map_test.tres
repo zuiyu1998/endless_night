@@ -1,62 +1,10 @@
-[gd_resource type="Resource" script_class="MapData" load_steps=12 format=3 uid="uid://1gl2rm3tm7tx"]
+[gd_resource type="Resource" script_class="MapData" load_steps=3 format=3 uid="uid://1gl2rm3tm7tx"]
 
 [ext_resource type="Script" path="res://src/map/map_cell_data.gd" id="1_t5n17"]
 [ext_resource type="Script" path="res://src/map/map_data.gd" id="2_usg4f"]
 
-[sub_resource type="Resource" id="Resource_hx6ru"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 0
-y = 0
-
-[sub_resource type="Resource" id="Resource_r2pgw"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 0
-y = 1
-
-[sub_resource type="Resource" id="Resource_bfmlo"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 0
-y = 2
-
-[sub_resource type="Resource" id="Resource_bg80g"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 0
-y = 3
-
-[sub_resource type="Resource" id="Resource_qbuq8"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 0
-y = 4
-
-[sub_resource type="Resource" id="Resource_ywlre"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 1
-y = 4
-
-[sub_resource type="Resource" id="Resource_8igru"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 2
-y = 4
-
-[sub_resource type="Resource" id="Resource_g02lg"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 3
-y = 4
-
-[sub_resource type="Resource" id="Resource_gkjey"]
-script = ExtResource("1_t5n17")
-map_item_name = "hill"
-x = 4
-y = 4
-
 [resource]
 script = ExtResource("2_usg4f")
-data = Array[ExtResource("1_t5n17")]([SubResource("Resource_hx6ru"), SubResource("Resource_r2pgw"), SubResource("Resource_bfmlo"), SubResource("Resource_bg80g"), SubResource("Resource_qbuq8"), SubResource("Resource_ywlre"), SubResource("Resource_8igru"), SubResource("Resource_g02lg"), SubResource("Resource_gkjey")])
+items = Array[ExtResource("1_t5n17")]([])
+cell_size = 128
+cell_space = 2

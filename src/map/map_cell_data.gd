@@ -12,3 +12,8 @@ var x: int = 0
 # 位置坐标 y
 @export
 var y: int = 0
+
+@export_category("unit")
+# 位置坐标 y
+@export
+var unit_icon: Texture

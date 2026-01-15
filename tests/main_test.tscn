@@ -1,9 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhnnpo2hqrhjw"]
+[gd_scene load_steps=10 format=3 uid="uid://dhnnpo2hqrhjw"]
 
 [ext_resource type="Script" path="res://tests/main_test.gd" id="1_1dobo"]
 [ext_resource type="PackedScene" uid="uid://dotudxu14pm7" path="res://src/level/level.tscn" id="2_uifye"]
+[ext_resource type="Resource" uid="uid://1gl2rm3tm7tx" path="res://tests/map_test.tres" id="3_rlpvf"]
+[ext_resource type="PackedScene" uid="uid://dh1woag5fuagg" path="res://src/enemy/square/square.tscn" id="3_yrn78"]
+[ext_resource type="Script" path="res://src/level/unit_data_collection.gd" id="4_84r47"]
+[ext_resource type="Script" path="res://src/map/map_cell_data.gd" id="4_g5cm6"]
+[ext_resource type="Texture2D" uid="uid://brdx2kc5yh88x" path="res://src/unit/assets/TemporaryArrowTower.png" id="5_vqqdt"]
+
+[sub_resource type="Resource" id="Resource_w02o6"]
+script = ExtResource("4_g5cm6")
+map_item_name = ""
+x = 0
+y = 0
+unit_icon = ExtResource("5_vqqdt")
+
+[sub_resource type="Resource" id="Resource_jic46"]
+script = ExtResource("4_84r47")
+items = Array[ExtResource("4_g5cm6")]([SubResource("Resource_w02o6")])
 
 [node name="MainTest" type="Node2D"]
 script = ExtResource("1_1dobo")
 
 [node name="Level" parent="." instance=ExtResource("2_uifye")]
+map_data = ExtResource("3_rlpvf")
+unit_data_collection = SubResource("Resource_jic46")
+
+[node name="Square" parent="." instance=ExtResource("3_yrn78")]
+position = Vector2(250, 151)

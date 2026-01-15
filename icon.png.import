@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6f56u8ipm42u"
-path="res://.godot/imported/1bit 16px icons part-2 outlines.png-f748ad591b204e36d37ea071e5d4f6f4.ctex"
+uid="uid://can5lubu4sv0o"
+path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/enemy/assets/1bit 16px icons part-2 outlines.png"
-dest_files=["res://.godot/imported/1bit 16px icons part-2 outlines.png-f748ad591b204e36d37ea071e5d4f6f4.ctex"]
+source_file="res://icon.png"
+dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
 
 [params]
 

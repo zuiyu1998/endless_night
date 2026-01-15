@@ -11,7 +11,6 @@ func execute(skill: Skill, caster:ISkillComponent, target:ISkillComponent, paylo
 	var context = SkillContext.new()
 	context.caster = caster
 	context.target = target
-	context.scene_tree = get_tree()
 	context.set_data(payload)
 	
 	var skill_commands = []

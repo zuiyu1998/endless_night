@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0oy5a3icc0kb"]
+
+[ext_resource type="Texture2D" uid="uid://brdx2kc5yh88x" path="res://src/unit/assets/TemporaryArrowTower.png" id="1_5v5h6"]
+[ext_resource type="Script" path="res://src/level/unit_data_button.gd" id="1_dwfee"]
+
+[node name="UnitDataButton" type="TextureButton"]
+custom_minimum_size = Vector2(64, 64)
+texture_normal = ExtResource("1_5v5h6")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_dwfee")

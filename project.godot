@@ -15,6 +15,10 @@ run/main_scene="res://tests/main_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVars="*res://src/autoload/global_vars.tscn"
+
 [input]
 
 spawn_unit={
@@ -28,8 +32,8 @@ spawn_unit={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Enemy"
 2d_physics/layer_3="Unit"
-2d_physics/layer_4="Hitbox"
-2d_physics/layer_5="Hurtbox"
+2d_physics/layer_4="UnitHitbox"
+2d_physics/layer_5="EnemyHurtbox"
 
 [physics]
 

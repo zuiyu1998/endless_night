@@ -2,7 +2,7 @@ extends Resource
 class_name MapData
 
 @export
-var data: Array[MapItemData] = []
+var items: Array[MapItemData] = []
 
 @export
 var cell_size: int = 128

@@ -1,6 +1,7 @@
 extends ISkillEffectProcessor
 class_name BulletSkillEffectProcessor
 
+
 var ball_tscn = preload("res://src/bullet/ball/ball.tscn")
 
 func effect_name() -> String:
@@ -15,7 +16,7 @@ func process(_effect: SkillEffect, context: SkillContext) -> ISkillCommand:
 	
 	var ball = ball_tscn.instantiate() as Ball
 	ball.position = bullet_position
-	ball.velocity = direction * 25
+	ball.velocity = direction * 400
 	
 	var skill_command = BulletSkillCommand.new()
 	skill_command.ball = ball
